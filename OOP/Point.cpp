@@ -44,7 +44,7 @@ Geom::AngleType Geom::TriangleAngel(Point p1, Point p2, Point p3)
 
 double Geom::TriangleS(Point p1, Point p2, Point p3)
 {
-	double result = ((p1.x - p3.x) * (p2.y - p3.y) - (p1.y - p3.y) * (p2.x - p3.x)) / 2;
+	double result = math.abs(((p1.x - p3.x) * (p2.y - p3.y) - (p1.y - p3.y) * (p2.x - p3.x))) / 2;
 
 	return result;
 }
