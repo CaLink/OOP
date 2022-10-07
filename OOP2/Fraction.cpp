@@ -18,7 +18,9 @@ Fraction::Fraction(double x, double y)
 
 void Fraction::Info()
 {
-	std::cout << "\t" << this->up << "\n" << "____________\n" << '\t' << this->down;
+	Prety();
+	std::cout << "   " << this->up << "\n" << "---------   ="<< up/down <<'\n' << "   " << this->down<< "\n \n \n";
+	
 }
 
 void Fraction::Mult(Fraction f1)
@@ -45,4 +47,19 @@ void Fraction::Div(int num)
 void Fraction::Sum(int num)
 {
 	this->up += num * this->down;
+}
+
+
+int Fraction::GCD(int a, int b)
+{
+	return !b ? std::abs(a) : GCD(b, a % b);
+
+}
+
+void Fraction::Prety()
+{
+	int div = GCD(up, down);
+	up = up / div;
+	down = down / div;
+
 }

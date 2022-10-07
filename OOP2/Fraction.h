@@ -21,6 +21,9 @@ public:
 	void Div(int);
 	void Sum(int);
 
+	int GCD(int, int);
+	void Prety();
+
 
 
 };
