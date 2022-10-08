@@ -2,22 +2,19 @@
 #include  <cstdlib>
 #include <iostream>
 
-ArrA operator!(ArrA arr)
+ArrA ArrA::operator!()
 {
-	for (int i = 0; i < arr.size; i++)
+	for (int i = 0; i < size; i++)
 	{
 		arr[i] *= -1;
 	}
 
-	return arr;
+	return *this;
 }
 
 ArrA::ArrA()
 {
-	for (int i = 0; i < 10; i++)
-	{
-		arr[i] = rand() % 100;
-	}
+    size=0;
 }
 
 
@@ -26,7 +23,7 @@ void ArrA::Info()
 {
 	for (int i = 0; i < size; i++)
 	{
-		std::cout << arr[i] << ', ';
+		std::cout << arr[i] << ", ";
 	}
 	std::cout << '\n';
 
@@ -35,4 +32,19 @@ void ArrA::Info()
 double& ArrA::operator[](int i)
 {
 	return arr[i];
+}
+
+void ArrA::Add(double in)
+{
+    if(size >= MAX)
+        return;
+        
+    arr[size]= in;
+    size++;
+    
+}
+
+void ArrA::Dell()
+{
+    size--;
 }
