@@ -1,29 +1,20 @@
-/******************************************************************************
-
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
-#include <iostream>
+﻿#include <iostream>
 
 using namespace std;
 
-
 class Human
 {
-    public:
+public:
     virtual void Info() = 0;
-    virtual void Hair() =0;
-    virtual void Nails() =0;
-    
+    virtual void Hair() = 0;
+    virtual void Nails() = 0;
+
     //Human();
 };
 
 class Man : public Human
 {
-    public:
+public:
     void Info()
     {
         cout << "ImMan\n";
@@ -36,17 +27,17 @@ class Man : public Human
     {
         cout << "0.1 mm\n";
     }
-    
-    
-    
+
+
+
 };
 
 class Fem :public Human
 {
-    public:
+public:
     void Info()
     {
-        cout<< "Hate Man\n";
+        cout << "Hate Man\n";
     }
     void Hair()
     {
@@ -56,14 +47,14 @@ class Fem :public Human
     {
         cout << "3000 m\n";
     }
-    
-    
+
+
 };
 
 
 class Child :public Human
 {
-    public:
+public:
     void Info()
     {
         cout << "Minecraft\n";
@@ -76,29 +67,29 @@ class Child :public Human
     {
         cout << "Nails????\n";
     }
-    
-    
+
+
 };
 
 
 int main()
 {
-    Human *h;
+    Human* h;
     Man m;
     Fem f;
     Child c;
-    
+
     h = &m;
     h->Info();
     h->Hair();
     h->Nails();
-    
+
     h = &f;
     h->Info();
     h->Hair();
     h->Nails();
-    
-    h=&c;
+
+    h = &c;
     h->Info();
     h->Hair();
     h->Nails();
