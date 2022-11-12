@@ -60,5 +60,12 @@ void Arr<T>::Add(T q)
 template <class T>
 void Arr<T>::Remove(T q)
 {
-	remove(arr.begin(),arr.end(), q);
+	std::vector<int> temp;
+
+    for(int i=0;i<arr.size();i++)
+        if(arr[i]==q)
+            temp.push_back(i);
+            
+    for (int i : temp)
+        arr.erase(arr.begin()+i);
 };
