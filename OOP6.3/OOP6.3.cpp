@@ -1,20 +1,36 @@
-﻿// OOP6.3.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
-#include <iostream>
+﻿#include <iostream>
+#include <map>
+#include <string>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	std::multimap<std::string, std::string> telKey;
+	std::multimap<std::string, std::string> nameKey;
+
+	telKey.insert(std::pair<std::string, std::string>("321", "assa"));
+	telKey.insert(std::pair<std::string, std::string>("123", "qwa"));
+	telKey.insert(std::pair<std::string, std::string>("321", "qwo"));
+	telKey.insert(std::pair<std::string, std::string>("153", "qwas"));
+	telKey.insert(std::pair<std::string, std::string>("322", "assa"));
+
+	for (std::multimap<std::string, std::string>::iterator itr = telKey.begin(); itr != telKey.end(); ++itr)
+		nameKey.insert(std::pair<std::string, std::string>(itr->second, itr->first));
+
+	while (true)
+	{
+		std::string tel;
+		std::string name;
+
+		std::cout << "Input tel and name";
+		std::cin >> tel >> name;
+
+		std::pair<std::multimap<std::string, std::string>::iterator, std::multimap<std::string, std::string>::iterator> range = telKey.equal_range(tel);
+		for (std::multimap<std::string, std::string>::iterator itr = range.first; itr != range.second; ++itr)
+			std::cout << tel << " - " << (*itr).second << "\n";
+
+		range = nameKey.equal_range(name);
+		for (std::multimap<std::string, std::string>::iterator itr = range.first; itr != range.second; ++itr)
+			std::cout << name << " - " << (*itr).second << "\n";
+	}
+
 }
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
