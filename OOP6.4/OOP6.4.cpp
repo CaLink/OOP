@@ -48,12 +48,12 @@ int main()
     Arr<Cust> z;
 
     z.Info();
-    z.Add(Cust(2));
+    z.Add(Cust(150));
     z.Add(Cust(3));
     z.Add(Cust(24));
-    z.Add(Cust(32));
+    z.Add(Cust(8));
     z.Add(Cust(42));
-    z.Add(Cust(246));
+    z.Add(Cust(130));
     z.Info();
 
 
