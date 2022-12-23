@@ -13,8 +13,8 @@ void calc(int z)
 	for (int i = 0; i < y; i++)
 		if (arr[z][i] % 2 != 0)
 			ans++;
-	std::this_thread::sleep_for(std::chrono::seconds((-(z*z)+10*z)));
-	std::cout << "Thread " << z << " count " << ans <<"\t" << (-(z * z) + 10 * z) << "\n";
+	std::this_thread::sleep_for(std::chrono::seconds((-(z * z) + 10 * z)));
+	std::cout << "Thread " << z << " count " << ans << "\t" << (-(z * z) + 10 * z) << "\n";
 
 
 }
@@ -22,6 +22,7 @@ void calc(int z)
 
 int main()
 {
+
 	for (int i = 0; i < 10; i++)
 		for (int j = 0; j < 1000; j++)
 			arr[i][j] = std::rand() % 100 + 1;
@@ -37,5 +38,7 @@ int main()
 	{
 		a[i].join();
 	}
+
+
 
 }
