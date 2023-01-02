@@ -139,7 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Checker.cpp" />
     <ClCompile Include="OOP7.2.cpp" />
+    <ClCompile Include="Writer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Checker.h" />
+    <ClInclude Include="Writer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
